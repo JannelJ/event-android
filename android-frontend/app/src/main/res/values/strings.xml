@@ -1,0 +1,61 @@
+
+<resources>
+    <string name="app_name">EventAppFrontend</string>
+    <string name="home_text">Home</string>
+    <string name="search_text">Search</string>
+    <string name="create_event_text">Create Event</string>
+    <string name="settings_text">Settings</string>
+    <string name="calendar_fab">Calendar FAB</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="event_image">Event Image</string>
+    <string name="AppName">RendezVenue</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet. In distinctio doloribus et veritatis omnis in temporibus neque non optio dignissimos! Et facilis incidunt in adipisci voluptatem est quos temporibus ut praesentium iste ea voluptas consequuntur est enim delectus At vitae suscipit!</string>
+    <string name="end_time">End Time</string>
+    <string name="start_time">Start Time</string>
+    <string name="date">Date</string>
+    <string name="location">Location</string>
+    <string name="postcode">Postcode</string>
+    <string name="event_description">Event Description</string>
+    <string name="event_name">Event Name</string>
+    <string name="add_event_to_cal">Add Event to your Calendar?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="your_upcoming_event">Your upcoming event</string>
+    <string name="arts_and_theatre">Arts &amp; Theatre</string>
+    <string name="sports">Sports</string>
+    <string name="film">Film</string>
+    <string name="music">Music</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="events_categories">Browse by categories</string>
+    <string name="no_event_added_yet">No event added yet</string>
+
+    <string-array name="event_type_list">
+        <item>Arts &amp; Theatre</item>
+        <item>Miscellaneous</item>
+        <item>Sports</item>
+        <item>Music</item>
+        <item>Film</item>
+    </string-array>
+
+    <string-array name="closest_city_list">
+        <item>Belfast</item>
+        <item>Birmingham</item>
+        <item>Bristol</item>
+        <item>Cardiff</item>
+        <item>Dublin</item>
+        <item>Edinburgh</item>
+        <item>Glasgow</item>
+        <item>Gloucester</item>
+        <item>Hull</item>
+        <item>Inverness</item>
+        <item>Leeds</item>
+        <item>Liverpool</item>
+        <item>London</item>
+        <item>Manchester</item>
+        <item>Newcastle-Upon-Tyne</item>
+        <item>Norwich</item>
+        <item>Southampton</item>
+        <item>Swansea</item>
+    </string-array>
+</resources>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.jeneric.eventappfrontend.model.EventModel" />
+
+        <variable
+            name="clickHandler"
+            type="com.jeneric.eventappfrontend.ui.eventdetails.EventDetailsClickHandler" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EventDetailsFragment">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/eventdetails_img"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:elevation="@dimen/cardview_default_elevation"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{event.imageUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/eventdetails_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{event.title}"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_img"
+            tools:text="Event Title" />
+
+        <ImageView
+            android:id="@+id/eventdetails_map_icon"
+            style="@style/icon_style"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="342dp"
+            android:src="@drawable/map_marker_24_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_title" />
+
+        <TextView
+            android:id="@+id/eventdetails_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{event.location}"
+            app:layout_constraintBottom_toTopOf="@+id/eventdetails_type"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/eventdetails_map_icon"
+            app:layout_constraintTop_toBottomOf="@+id/eventdetails_title"
+            tools:text="Event Location" />
+
+        <ImageView
+            android:id="@+id/eventdetails_briefcase_icon"
+            style="@style/icon_style"
+            android:layout_width="24dp"
+
+            android:layout_height="24dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="342dp"
+            android:src="@drawable/briefcase_24_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventdetails_map_icon" />
+
+        <TextView
+            android:id="@+id/eventdetails_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:text="@{event.type}"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/eventdetails_briefcase_icon"
+            app:layout_constraintTop_toBottomOf="@+id/eventdetails_location"
+            tools:text="Event Type" />
+
+        <ImageView
+            android:id="@+id/eventdetails_calendar_icon"
+            style="@style/icon_style"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="342dp"
+            android:src="@drawable/calendar_24_black"
+            app:layout_constraintEnd_toStartOf="@id/eventdetails_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_briefcase_icon" />
+
+        <TextView
+            android:id="@+id/eventdetails_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:text="@{event.startDate}"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/eventdetails_calendar_icon"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_type"
+            tools:text="Day, Month Date" />
+
+        <TextView
+            android:id="@+id/eventdetails_startTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="29dp"
+            android:fontFamily="sans-serif"
+            android:text="@{event.startTime}"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/eventdetails_date"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@id/eventdetails_date"
+            tools:text="9:00 AM" />
+
+        <ImageView
+            android:id="@+id/eventdetails_globe_icon"
+            style="@style/icon_style"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="342dp"
+            android:src="@drawable/globe_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_calendar_icon" />
+
+        <TextView
+            android:id="@+id/eventdetails_url"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:autoLink="web"
+            android:fontFamily="sans-serif"
+            android:text="@{event.url}"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/eventdetails_globe_icon"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_date"
+            tools:text="URL Link" />
+
+        <TextView
+            android:id="@+id/eventdetails_description"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:breakStrategy="high_quality"
+            android:fontFamily="sans-serif"
+            android:lineSpacingExtra="3sp"
+            android:text="@{event.description}"
+            app:autoSizeTextType="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintLeft_toLeftOf="@id/eventdetails_globe_icon"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventdetails_url"
+            tools:text="@string/dummy_text" />
+
+        <!--    Conditional Buttons -->
+
+        <!--    If event exist, this button should appear and add button will be set to visibility_GONE-->
+
+        <Button
+            android:id="@+id/eventdetails_button_add_event"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="100dp"
+            android:onClick="@{clickHandler::onButtonClick}"
+            android:text="Add to Calendar"
+            android:textAllCaps="false"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventdetails_description"
+            app:layout_constraintVertical_bias="1.0" />
+        `
+
+        <Button
+            android:id="@+id/eventdetails_button_remove_event"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="100dp"
+            android:text="Remove from Calendar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventdetails_description"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
